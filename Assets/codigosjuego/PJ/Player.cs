@@ -60,10 +60,21 @@ public class PlayerC : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Detección de recolectables mediante Trigger
-        if (other.CompareTag("Collectible"))
+        if (gameObject.CompareTag("Pickup"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             //GameManager.instance.CollectItem();
         }
     }
+
+
+    
+
+
+
+
+
+
+
+
 }
