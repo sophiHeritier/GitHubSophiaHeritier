@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Items: " + collectedItems + " / " + totalItems;
+            scoreText.text = "Score: " + collectedItems + " / " + totalItems;
         }
     }
 
