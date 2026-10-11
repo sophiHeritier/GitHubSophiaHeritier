@@ -1,6 +1,6 @@
-using UnityEngine;
-
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -63,6 +63,17 @@ public class GameManager : MonoBehaviour
         {
             winPanel.SetActive(true); // Muestra el panel de victoria
         }
-        Time.timeScale = 0f; // Pausa el juego opcionalmente
+
+        Time.timeScale = 0f; // Pausa el juego para que el jugador no se siga moviendo de fondo
+    }
+
+    // NUEVA FUNCIÓN DE REINICIO
+    public void RestartGame()
+    {
+        // 1. Muy importante: devolvemos el tiempo a la normalidad antes de recargar
+        Time.timeScale = 1f;
+
+        // 2. Recargamos la escena actual que esté activa
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
